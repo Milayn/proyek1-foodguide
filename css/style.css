@@ -639,7 +639,7 @@
      font-weight: 700;
      text-transform: uppercase;
 }
- .hvr-hoverr{
+ .hvr-hover{
      display: inline-block;
      vertical-align: middle;
      -webkit-transform: perspective(1px) translateZ(0);
@@ -654,7 +654,7 @@
      border-radius: 0;
      box-shadow: none;
 }
- .hvr-hoverr::after {
+ .hvr-hover::after {
     content: "";
 	position: absolute;
 	z-index: -1;
@@ -673,12 +673,12 @@
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
- .hvr-hoverr:hover::after{
+ .hvr-hover:hover::after{
      -webkit-transform: scale(2);
 	 transform: scale(2);
      color: #ffffff;
 }
- .hvr-hoverr{
+ .hvr-hover{
 	 overflow: hidden;
 }
  ul.cart-list > li.total > .btn:hover{
