@@ -637,14 +637,14 @@
      font-weight: 700;
      text-transform: uppercase;
 }
- .hvr-hover{
+ .hvr-hoverr{
      display: inline-block;
      vertical-align: middle;
      -webkit-transform: perspective(1px) translateZ(0);
      transform: perspective(1px) translateZ(0);
      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
      position: relative;
-     background: #b0b435;
+     background: yellowgreen;
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -652,7 +652,7 @@
      border-radius: 0;
      box-shadow: none;
 }
- .hvr-hover::after {
+ .hvr-hoverr::after {
     content: "";
 	position: absolute;
 	z-index: -1;
@@ -660,7 +660,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #000000;
+	background: #3D251E;
 	border-radius: 100%;
 	-webkit-transform: scale(0);
 	transform: scale(0);
@@ -671,12 +671,12 @@
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
- .hvr-hover:hover::after{
+ .hvr-hoverr:hover::after{
      -webkit-transform: scale(2);
 	 transform: scale(2);
      color: #ffffff;
 }
- .hvr-hover{
+ .hvr-hoverr{
 	 overflow: hidden;
 }
  ul.cart-list > li.total > .btn:hover{
