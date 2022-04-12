@@ -887,10 +887,26 @@
      font-weight: 700;
      color: #000000;
 }
- .title-all p{
-     color: #999999;
-     font-size: 16px;
+.title-all h2{
+    font-size: 22px;
+    color: #000000;
 }
+ .title-all p{
+     color: #000000;
+     font-size: 18px;
+}
+.title-resep h2{
+    font-size: 35px;
+    font-weight: 700;
+    color: #000000;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.title-resep{
+    color: #000000;
+    font-size: 18px;
+}
+
  .products-box{
      padding: 70px 0px;
 }
@@ -1533,6 +1549,33 @@
      padding: 70px 20px;
      position: relative;
 }
+
+ .all-title-box11{
+    background: url("../images/BannerAnemia.jpg") no-repeat center center;
+
+.all-title-box1{
+    background: url("../images/resep/DIABETES-3.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 20px;
+    position: relative;
+}
+.all-title-box1::before{
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
  .all-title-box::before{
      background: rgba(0,0,0,0.6);
      content: "";
@@ -1543,12 +1586,29 @@
      left: 0px;
      top: 0px;
 }
+ .all-title-box11::before{
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
  .all-title-box h2{
      font-size: 28px;
      font-weight: 700;
      color: #ffffff;
 	 float: left;
      padding: 10px 0px;
+}
+ .all-title-box11 h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    float: left;
+    padding: 10px 0px;
 }
  .all-title-box .breadcrumb{
      background: #b0b435;
@@ -1557,17 +1617,36 @@
      border-radius: 0px;
 	 float: right;
 }
+ .all-title-box11 .breadcrumb{
+    background: #b0b435;
+    margin: 0px;
+    display: inline-block;
+    border-radius: 0px;
+    float: right;
+}
  .all-title-box .breadcrumb li{
      display: inline-block;
      color: #000000;
      font-size: 16px;
 }
+ .all-title-box11 .breadcrumb li{
+    display: inline-block;
+    color: #000000;
+    font-size: 16px;
+}
  .all-title-box .breadcrumb li a{
      color: #ffffff;
      font-size: 16px;
 }
+ .all-title-box11 .breadcrumb li a{
+    color: #ffffff;
+    font-size: 16px;
+}
  .all-title-box .breadcrumb-item + .breadcrumb-item::before{
      color: #000000;
+}
+ .all-title-box11 .breadcrumb-item + .breadcrumb-item::before{
+    color: #000000;
 }
  .about-box-main{
      padding: 70px 0px;
