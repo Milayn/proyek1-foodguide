@@ -891,6 +891,19 @@
      color: #999999;
      font-size: 16px;
 }
+
+.title-resep h2{
+    font-size: 35px;
+    font-weight: 700;
+    color: #000000;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.title-resep{
+    color: #000000;
+    font-size: 18px;
+}
+
  .products-box{
      padding: 70px 0px;
 }
@@ -1533,6 +1546,30 @@
      padding: 70px 20px;
      position: relative;
 }
+.all-title-box1{
+    background: url("../images/resep/DIABETES-3.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 20px;
+    position: relative;
+}
+.all-title-box1::before{
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
  .all-title-box::before{
      background: rgba(0,0,0,0.6);
      content: "";
