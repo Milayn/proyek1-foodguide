@@ -1552,7 +1552,18 @@
 
  .all-title-box11{
     background: url("../images/BannerAnemia.jpg") no-repeat center center;
-
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 20px;
+    position: relative;
+ }
+ 
 .all-title-box1{
     background: url("../images/resep/DIABETES-3.jpg") no-repeat center center;
     -webkit-background-size: cover;
