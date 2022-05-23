@@ -78,10 +78,10 @@ img{
 }
   
 .logout a:hover, .logout a:active {
-    background-color: #6F9D04;
+    background-color: green;
 }
 
-.edit a:link, .edit a:visited {
+.showMenu a:link, .showMenu a:visited {
     background-color: #6F9D04;
     color: white;
     padding: 7px 15px;
@@ -91,8 +91,22 @@ img{
     margin: 3px;
 }
   
-.edit a:hover, .edit a:active {
+.showMenu a:hover, .showMenu a:active {
     background-color: green;
+}
+
+.edit a:link, .edit a:visited {
+    background-color: orange;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px;
+}
+  
+.edit a:hover, .edit a:active {
+    background-color: rgb(223, 146, 5);
 }
 
 .hapus a:link, .hapus a:visited {

@@ -24,9 +24,6 @@
 </div><br>
 <div class="w3-container">
     <div class="w3-container">
-        <div class="menu">
-            <a href="rekomendasiCRUD.php"> Rekomendasi </a>
-          </div>
         <div class="tambah">
             <a href="insertPenyakit.html"> Tambah Data </a>
         </div>
@@ -35,6 +32,7 @@
             <th>ID Penyakit</th>
             <th>Nama Penyakit</th>
             <th>Gambar</th>
+            <th>Aksi</th>
         </tr>
         <?php
             include "koneksi.php";
@@ -51,6 +49,9 @@
             
             <td>
                 <div class="aksi">
+                    <div class="showMenu">
+                        <a href="rekomendasiCRUD.php?idpenyakit=<?php echo $row['idpenyakit'];?>">Show Menu</a>
+                    </div>
                     <div class="edit">
                         <a href="editPenyakit.php?idpenyakit=<?php echo $row['idpenyakit'];?>">Edit</a>
                     </div>

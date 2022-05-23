@@ -10,7 +10,7 @@
     <h5><b>Admin</b></h5>
   </div>
   <a href="index.php" class="w3-bar-item w3-button">Penyakit</a>
-  <a href="resepCRUD.php" class="w3-bar-item w3-button">Resep</a>
+  <a href="reseprCRUD.php" class="w3-bar-item w3-button">Resep</a>
   <div class="logout">
     <a href="../index.html">Log Out</a>
   </div>
@@ -20,48 +20,43 @@
 <div style="margin-left:20%">
 
 <div class="w3-container w3-teal">
-  <br><h1><center><b>Resep Makanan</b></center></h1><br><br>
+  <br><h1><center><b>Menu Rekomendasi</b></center></h1><br><br>
 </div><br>
 <div class="w3-container">
     <div class="w3-container">
         <div class="tambah">
-            <a href="insertForm.html"> Tambah Data</a>
+            <a href="insertRekomForm.html"> Tambah Data</a>
         </div>
     <table>
         <tr>
-            <th>Nama Penyakit</th>
-            <th>ID Resep</th>
-            <th>Nama Resep</th>           
-            <th>Gambar</th>
-            <th>Bahan</th>
-            <th>Cara Membuat</th>
+            <th>ID Rekomendasi</th>
+            <th>ID Penyakit</th>
+            <th>Nama Rekomendasi</th>           
+            <th>Keterangan</th>
             <th>Aksi</th>
         </tr>
         <?php
             include "koneksi.php";
-            $query ="SELECT r.idresep, r.namaresep, p.namapenyakit, r.gambarresep, 
-            r.bahan, r.caramembuat from resep r
-            inner join penyakit p on r.idpenyakit=p.idpenyakit";
+            $query ="SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan
+            from menurekomendasi";
             $result = mysqli_query($connect, $query);
 
-            if(mysqli_num_rows($result)>=0){
+            if(mysqli_num_rows($result)>0){
                 while($row = mysqli_fetch_array($result)){    
         ?>
         <tr>
-            <td><?php echo $row["namapenyakit"]?></td>
-            <td><?php echo $row["idresep"]?></td>
-            <td><?php echo $row["namaresep"]?></td>
-            <td><?php echo '<img src = "images/'.$row['gambarresep'].'">'?></td>
-            <td><?php echo nl2br(htmlspecialchars($row["bahan"]))?></td>
-            <td><?php echo nl2br(htmlspecialchars($row["caramembuat"]))?></td>
+            <td><?php echo $row["idrekomendasi"]?></td>
+            <td><?php echo $row["idpenyakit"]?></td>
+            <td><?php echo $row["namarekomendasi"]?></td>
+            <td><?php echo nl2br(htmlspecialchars($row["keterangan"]))?></td>
             
             <td>
                 <div class="aksi">
                     <div class="edit">
-                        <a href="editForm.php?idresep=<?php echo $row['idresep'];?>">Edit</a>
+                        <a href="editRekom.php?idrekomendasi=<?php echo $row['idrekomendasi'];?>">Edit</a>
                     </div>
                     <div class="hapus">
-                        <a href="hapus.php?idresep=<?php echo $row['idresep'];?>">Hapus</a>
+                        <a href="hapusRekom.php?idrekomendasi=<?php echo $row['idrekomendasi'];?>">Hapus</a>
                     </div>
                 </div>
             </td>
