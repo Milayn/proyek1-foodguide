@@ -11,7 +11,7 @@
         <?php
             include "koneksi.php";
             $idpantangan = $_GET['idpantangan'];
-            $query = "SELECT idpantangan, namapantangan, keterangan from menupantangan";
+            $query = "SELECT idpantangan, namapantangan, keterangan from menupantangan where idpantangan='$idpantangan'";
             $result = mysqli_query($connect, $query);
         ?>
 

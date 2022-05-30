@@ -9,19 +9,6 @@
     $gambarpenyakit = $_FILES['gambarpenyakit']['name'];//mengambil nama file yg diupload
     $tmp = $_FILES['gambarpenyakit']['tmp_name'];
 
-    //mencari idpenyakit yang memeliki namapenyakit tertentu
-    // $sql ="SELECT idpenyakit from penyakit where namapenyakit= '$namapenyakit'";
-    // $hasil= mysqli_query($connect, $sql);
-
-    // if(mysqli_num_rows($hasil)>0){
-    //      while($row = mysqli_fetch_array($hasil)){    
-    //         $idpenyakit = $row["idpenyakit"];
-    //     }
-    // }
-    // else{
-    //     echo "0 hasil";
-    // }
-
     if(empty($gambarpenyakit)){//jika user tidak memilih file foto pada form
         $query = "UPDATE penyakit SET namapenyakit='$namapenyakit'
         WHERE idpenyakit ='$idpenyakit'";
