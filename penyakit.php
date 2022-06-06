@@ -1,3 +1,7 @@
+<?php
+include 'admin/koneksi.php';
+// $data = $penyakit -> getData(4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -10,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Food Guide | Menu Resep</title>
+    <title>Food Guide | PENYAKIT</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -53,14 +57,40 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="penyakit.html">Penyakit</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="menuresep.html">Resep Makanan</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="penyakit.html">Penyakit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- Start Side Menu -->
-
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <li class="cart-box">
+                    <ul class="cart-list">
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">$80.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">$60.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Agam facilisis</a></h6>
+                            <p>1x - <span class="price">$40.00</span></p>
+                        </li>
+                        <li class="total">
+                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>
@@ -78,114 +108,40 @@
     </div>
     <!-- End Top Search -->
 
-    <!-- Start Banner -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <br><br><br><br><br><br><br>
+    <!-- Start Categories  -->
+    <div class="categories-shop">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Pilih Gangguan/Penyakit</h1>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            
+            <div class="row">
+            <?php
+            include "admin/koneksi.php";
+            $query ="SELECT p.idpenyakit, p.namapenyakit, p.gambarpenyakit from penyakit p";
+            $result = mysqli_query($connect, $query);
+
+            if(mysqli_num_rows($result)>0){
+                while($row = mysqli_fetch_array($result)){    
+            ?>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <?php echo '<img src = "images/'.$row['gambarpenyakit'].'">'?>
+                        <a class="btn hvr-hover" href="penyakitPosts.php?idpenyakit=<?php echo $row['idpenyakit']; ?>"><?php  echo $row['namapenyakit']?></a>
+                    </div>
+                </div>
+            <?php
+                }
+            }
+            ?>
             </div>
         </div>
     </div>
-    <!-- End Banner -->
-<br>
 
-
-    <!-- start content -->
-
-        <div class="categories-shop">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-all text-center">
-                            <h1>Menu Resep</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Teh Herbal</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Sereal Susu</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Bubur Ayam</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Bubur Sumsum</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Bubur Kacang Ijo</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Kulup</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Kare</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Lodeh</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Lorem</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Ipsum</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Dolor</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                            <a class="btn hvr-hover" href="#">Lorem ipsum</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!-- end content -->
-    <br><br><br>
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
