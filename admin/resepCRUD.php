@@ -48,6 +48,7 @@
                         <th>Gambar</th>
                         <th>Bahan</th>
                         <th>Cara Membuat</th>
+                        <th>Keterangan</th>
                         <th>Aksi</th>
                     </tr>
                     <?php
@@ -65,7 +66,7 @@
                         }		
                     }else{
                         $query = "SELECT r.idresep, r.namaresep, p.namapenyakit, r.gambarresep, 
-                        r.bahan, r.caramembuat from resep r
+                        r.bahan, r.caramembuat, r.keterangan from resep r
                         inner join penyakit p on r.idpenyakit=p.idpenyakit";
                     }
                     $result = mysqli_query($connect, $query);
@@ -80,6 +81,7 @@
                                 <td><?php echo '<img src = "images/' . $row['gambarresep'] . '">' ?></td>
                                 <td><?php echo nl2br(htmlspecialchars($row["bahan"])) ?></td>
                                 <td><?php echo nl2br(htmlspecialchars($row["caramembuat"])) ?></td>
+                                <td><?php echo nl2br(htmlspecialchars($row["keterangan"])) ?></td>
 
                                 <td>
                                     <div class="aksi">
@@ -100,9 +102,7 @@
                     ?>
                 </table>
             </div>
-
         </div>
-
 </body>
 
 </html>

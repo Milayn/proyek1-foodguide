@@ -11,10 +11,10 @@
         echo '
         <script type="text/JavaScript"> 
             alert("Data Berhasil Dihapus!");
-            document.location.href="index.php"
+            document.location.href="penyakitCRUD.php"
         </script>';
 ?>
-    <a href="index.php">Lihat Data</a>
+    <a href="penyakitCRUD.php">Lihat Data</a>
 <?php
     }
     else{
@@ -22,7 +22,7 @@
         echo '
         <script type="text/JavaScript"> 
             alert("Upss! Data Gagal Dihapus!");
-            document.location.href="index.php"
+            document.location.href="penyakitCRUD.php"
         </script>';
     }
 ?>

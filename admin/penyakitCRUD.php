@@ -10,7 +10,7 @@
         <div class="admin">
             <h5><b>Admin</b></h5>
         </div>
-        <a href="index.php" class="w3-bar-item w3-button">Penyakit</a>
+        <a href="penyakitCRUD.php" class="w3-bar-item w3-button">Penyakit</a>
         <a href="rekomendasiCRUD.php" class="w3-bar-item w3-button">Rekomendasi</a>
         <a href="pantanganCRUD.php" class="w3-bar-item w3-button">Pantangan</a>
         <a href="resepCRUD.php" class="w3-bar-item w3-button">Resep</a>
@@ -30,15 +30,12 @@
         </div><br>
         <div class="w3-container">
             <div class="w3-container">
-                <form action="penyakitCRUD.php" method="get">
+            <form action="penyakitCRUD.php" method="get">
                     <label><b> Cari</b></label>
                     <input type="text" name="cari">
                     <input type="submit" value="Cari" class="btn btn-success">
                 </form>
                 <br>
-                <div class="menu">
-                    <a href="rekomendasiCRUD.php"> Rekomendasi </a>
-                </div>
                 <div class="tambah">
                     <a href="insertPenyakit.html"> Tambah Data </a>
                 </div>
@@ -47,14 +44,14 @@
                         <th>ID Penyakit</th>
                         <th>Nama Penyakit</th>
                         <th>Gambar</th>
+                        <th>Aksi</th>
                     </tr>
                     <?php
                     include "koneksi.php";
                     if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
                         $query="SELECT idpenyakit, namapenyakit, gambarpenyakit
-                        from penyakit where namapenyakit like '%$cari%' OR idpenyakit like '%$cari%' 
-                        OR idpenyakit like '%$cari%' OR keterangan like '%$cari%'";	
+                        from penyakit where namapenyakit like '%$cari%' OR idpenyakit like '%$cari%'";	
                         if($cari==null)	{
                             $query = "SELECT idpenyakit, namapenyakit, gambarpenyakit
                         from penyakit";
@@ -64,10 +61,8 @@
                         from penyakit";	
                     }
                     $result = mysqli_query($connect, $query);
-                    $query = "SELECT p.idpenyakit, p.namapenyakit, p.gambarpenyakit from penyakit p";
-                    $result = mysqli_query($connect, $query);
 
-                    if (mysqli_num_rows($result) > 0) {
+                    if (mysqli_num_rows($result)) {
                         while ($row = mysqli_fetch_array($result)) {
                     ?>
                             <tr>
@@ -88,8 +83,6 @@
                             </tr>
                     <?php
                         }
-                    } else {
-                        echo "0 result";
                     }
                     ?>
                 </table>

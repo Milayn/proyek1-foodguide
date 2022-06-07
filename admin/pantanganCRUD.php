@@ -10,7 +10,7 @@
         <div class="admin">
             <h5><b>Admin</b></h5>
         </div>
-        <a href="index.php" class="w3-bar-item w3-button">Penyakit</a>
+        <a href="penyakitCRUD.php" class="w3-bar-item w3-button">Penyakit</a>
         <a href="rekomendasiCRUD.php" class="w3-bar-item w3-button">Rekomendasi</a>
         <a href="pantanganCRUD.php" class="w3-bar-item w3-button">Pantangan</a>
         <a href="resepCRUD.php" class="w3-bar-item w3-button">Resep</a>

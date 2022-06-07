@@ -40,7 +40,7 @@
     // $idresep = 3;
     $idresep =$_GET['idresep'];
 
-    $sql = "SELECT r.idresep, p.idpenyakit, p.namapenyakit, p.gambarpenyakit, r.namaresep, r.gambarresep, r.bahan, r.caramembuat from resep r 
+    $sql = "SELECT r.idresep, p.idpenyakit, p.namapenyakit, p.gambarpenyakit, r.namaresep, r.gambarresep, r.bahan, r.caramembuat, r.keterangan from resep r 
                 inner join penyakit p on r.idpenyakit=p.idpenyakit";
     $query1 = "$sql where r.idresep='$idresep'";
     $hasil = mysqli_query($connect, $query1);
@@ -88,6 +88,7 @@
                     <div class="col-lg-7">
                         <div class="title-resep">
                             <h2 class="noo-sh-title-top"><span><?php echo $row['namaresep']; ?></span></h2>
+                            <p><?php echo $row['keterangan']; ?></p>
                             <h3><b>Bahan-bahan:</b></h3>
                             <p><?php echo $row['bahan']; ?></p>
                             <h3><b>Cara Membuat</b></h3>
@@ -127,7 +128,7 @@
                                     <div class="blog-content">
                                         <div class="title-blog">
                                             <h3><?php echo $row['namaresep']; ?></h3>
-                                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                            <?php echo $row['keterangan']; ?>
                                         </div>
                                         <ul class="option-blog">
                                             <li><a href="resepPosts.php?idresep=<?php echo $row['idresep']; ?>"><i class="fas fa-eye"></i></a></li>

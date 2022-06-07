@@ -21,7 +21,7 @@
         echo '
         <script type="text/JavaScript"> 
             alert("Wahh! Sepertinya Ada Data Yang Belum Diisi");
-            document.location.href="index.php"
+            document.location.href="penyakitCRUD.php"
         </script>';
     }
 
@@ -30,10 +30,10 @@
         echo '
         <script type="text/JavaScript"> 
             alert("Data Berhasil Ditambahkan!");
-            document.location.href="index.php"
+            document.location.href="penyakitCRUD.php"
         </script>';
 ?>
-    <!-- <a href="index.php">Lihat Data</a> -->
+    <!-- <a href="penyakitCRUD.php">Lihat Data</a> -->
 <?php
     }
     else{
@@ -41,7 +41,7 @@
         echo '
         <script type="text/JavaScript"> 
             alert("Data Gagal Ditambahkan!!");
-            document.location.href="index.php"
+            document.location.href="penyakitCRUD.php"
         </script>';
     }
     mysqli_close($connect);

@@ -1563,6 +1563,20 @@
     padding: 70px 20px;
     position: relative;
 }
+
+.all-title-box{
+    background: url("../images/menuResep.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 20px;
+    position: relative;
+}
 .all-title-box1::before{
     background: rgba(0,0,0,0.6);
     content: "";
@@ -1582,6 +1596,34 @@
      height: 100%;
      left: 0px;
      top: 0px;
+}
+.all-title-box11 {
+    background: url("../images/sakit.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 70px 20px;
+    position: relative;
+}
+
+.all-title-box11::before {
+    background: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.all-title-box11 .breadcrumb-item+.breadcrumb-item::before {
+    color: #000000;
 }
  .all-title-box h2{
      font-size: 28px;

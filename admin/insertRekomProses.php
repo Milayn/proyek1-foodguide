@@ -16,7 +16,7 @@
             document.location.href="rekomendasiCRUD.php"
         </script>';
 ?>
-    <a href="index.php">Lihat Data</a>
+    <a href="penyakitCRUD.php">Lihat Data</a>
 <?php
     }
     else{

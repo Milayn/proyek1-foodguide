@@ -50,7 +50,7 @@
             <div class="row">
               <div class="group">
                 <div class="back">
-                  <a href="index.php"><b>Back</b></a>
+                  <a href="penyakitCRUD.php"><b>Back</b></a>
                 </div>
                   <button type="submit" class="button" name="edit" value="Edit Data"><b>Submit</b></button>&nbsp;
               </div>

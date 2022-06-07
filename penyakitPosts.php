@@ -79,85 +79,49 @@
     <!-- End Top Search -->
 
     <!-- Start Banner -->
-    <?php
-    include "koneksi.php";
-    $idpenyakit = $_GET['idpenyakit'];
-    $query1 = "SELECT idpenyakit, namapenyakit, gambarpenyakit FROM penyakit where idpenyakit=$idpenyakit";
-    $result1 = mysqli_query($connect, $query1);
-    ?>
-    <?php
-    while ($row1 = mysqli_fetch_array($result1)) {;
-    ?>
-        <style>
-            .all-title-box11 {
-                background: url("../images/<?php echo $row1['gambarpenyakit']; ?>") no-repeat center center;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -ms-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                background-position: top;
-                text-align: center;
-                background-attachment: fixed;
-                padding: 70px 20px;
-                position: relative;
 
-            }
-
-            .all-title-box11::before {
-                background: rgba(0, 0, 0, 0.6);
-                content: "";
-                position: absolute;
-                z-index: 0;
-                width: 100%;
-                height: 100%;
-                left: 0px;
-                top: 0px;
-            }
-
-            .all-title-box11 .breadcrumb {
-                background: #b0b435;
-                margin: 0px;
-                display: inline-block;
-                border-radius: 0px;
-                float: right;
-            }
-
-            .all-title-box11 .breadcrumb-item+.breadcrumb-item::before {
-                color: #000000;
-            }
-        </style>
-        <div class="all-title-box11">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                    </div>
+    <div class="all-title-box11">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br><br><br><br><br><br><br><br>
                 </div>
             </div>
         </div>
-        <!-- End Banner -->
-        <br>
+    </div>
+    <!-- End Banner -->
+    <br>
 
 
-        <!-- start content -->
+    <!-- start content -->
 
-        <div class="categories-shop">
-            <div class="container">
-                <?php
-                $query2 = "SELECT idpantangan, idpenyakit, namapantangan, keterangan FROM menupantangan WHERE idpenyakit=$idpenyakit";
-                $query3 = "SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan FROM menurekomendasi where idpenyakit=$idpenyakit";
-                $query4 = "SELECT idresep, idpenyakit, namaresep, bahan, caramembuat  FROM resep WHERE idpenyakit=$idpenyakit";
-                $result2 = mysqli_query($connect, $query2);
-                $result3 = mysqli_query($connect, $query3);
-                $result4 = mysqli_query($connect, $query4);
+    <div class="categories-shop">
+        <div class="container">
+            <?php
+            include "koneksi.php";
+            $idpenyakit = $_GET['idpenyakit'];
+            $query1 = "SELECT idpenyakit, namapenyakit, gambarpenyakit FROM penyakit where idpenyakit=$idpenyakit";
+            $query2 = "SELECT idpantangan, idpenyakit, namapantangan, keterangan FROM menupantangan WHERE idpenyakit=$idpenyakit";
+            $query3 = "SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan FROM menurekomendasi where idpenyakit=$idpenyakit";
+            $query4 = "SELECT idresep, idpenyakit, namaresep, bahan, caramembuat, keterangan  FROM resep WHERE idpenyakit=$idpenyakit";
+            $result1 = mysqli_query($connect, $query1);
+            $result2 = mysqli_query($connect, $query2);
+            $result3 = mysqli_query($connect, $query3);
+            $result4 = mysqli_query($connect, $query4);
 
-                ?>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-all">
-                            <h1><?php echo $row1['namapenyakit'] ?></h1>
+            ?>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all">
                         <?php
-                    }
+                        while ($row1 = mysqli_fetch_array($result1)) {;
+                        ?>
+                            <h1><?php echo $row1['namapenyakit'] ?></h1>
+                            <br>
+                            <img src="images/<?php echo $row1['gambarpenyakit']; ?>" alt="" />
+                            <br>
+                        <?php
+                        }
                         ?>
                         <br>
                         <h2 style="font-weight: 700;">Makanan yang direkomendasikan: </h2>
@@ -185,134 +149,134 @@
                             }
                         }
                         ?>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Start Blog  -->
-            <div class="latest-blog">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="title-all text-center">
-                                <h1>Menu makanan yang direkomendasikan</h1>
-                            </div>
+        </div>
+        <!-- Start Blog  -->
+        <div class="latest-blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-all text-center">
+                            <h1>Menu makanan yang direkomendasikan</h1>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-start">
-                        <?php
-                        if (mysqli_num_rows($result4) > 0) {
-                            while ($row4 = mysqli_fetch_array($result4)) {
-                        ?>
-                                <div class="col-md-6 col-lg-4 col-xl-4">
-                                    <div class="blog-box">
-                                        <div class="blog-img">
-                                            <img class="img-fluid" src="images/resep/<?php echo $row4['gambarresep']; ?>" alt="" />
+                </div>
+                <div class="row d-flex justify-content-start">
+                    <?php
+                    if (mysqli_num_rows($result4) > 0) {
+                        while ($row4 = mysqli_fetch_array($result4)) {
+                    ?>
+                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="blog-box">
+                                    <div class="blog-img">
+                                        <img class="img-fluid" src="images/resep/<?php echo $row4['gambarresep']; ?>" alt="" />
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="title-blog">
+                                            <h3><?php echo $row4['namaresep']; ?></h3>
+                                            <?php echo $row4['keterangan']; ?>
                                         </div>
-                                        <div class="blog-content">
-                                            <div class="title-blog">
-                                                <h3><?php echo $row4['namaresep']; ?></h3>
-                                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                                            </div>
-                                            <ul class="option-blog">
-                                                <li><a href="resepPosts.php?idresep=<?php echo $row4['idresep']; ?>"><i class="fas fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
+                                        <ul class="option-blog">
+                                            <li><a href="resepPosts.php?idresep=<?php echo $row4['idresep']; ?>"><i class="fas fa-eye"></i></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                            <?php
-                            }
-                            ?>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog  -->
-        <?php
-
+                            </div>
+                        <?php
                         }
-
-        ?>
-        <br><br><br>
+                        ?>
+                </div>
+            </div>
         </div>
+        <!-- End Blog  -->
+    <?php
 
-        <!-- end content -->
-        <br><br><br>
-        <!-- Start Footer  -->
-        <footer>
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link">
-                                <h4>FOOD GUIDE</h4>
-                                <ul>
-                                    <li><a href="#">Tentang Kami</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Coorporate Partnership</a></li>
-                                    <li><a href="#">Sequrity</a></li>
-                                    <li><a href="#">Syarat dan Ketentuan</a></li>
-                                </ul>
-                            </div>
+                    }
+
+    ?>
+    <br><br><br>
+    </div>
+
+    <!-- end content -->
+    <br><br><br>
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>FOOD GUIDE</h4>
+                            <ul>
+                                <li><a href="#">Tentang Kami</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Coorporate Partnership</a></li>
+                                <li><a href="#">Sequrity</a></li>
+                                <li><a href="#">Syarat dan Ketentuan</a></li>
+                            </ul>
                         </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link-contact">
-                                <h4>Hubungi Kami</h4>
-                                <ul>
-                                    <li>
-                                        <p><i class="fas fa-map-marker-alt"></i>Address: Gedung Food Guide, Jl. Soekarno Hatta<br>Nomer 20, Malang </p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+62 21-5555-7788">+62 21-5555-7788</a></p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-envelope"></i>Email: <a href="mailto:help@FoodGuide.com">help@FoodGuide.com</a></p>
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Hubungi Kami</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Gedung Food Guide, Jl. Soekarno Hatta<br>Nomer 20, Malang </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+62 21-5555-7788">+62 21-5555-7788</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:help@FoodGuide.com">help@FoodGuide.com</a></p>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h4>Media Sosial</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h4>Media Sosial</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- End Footer  -->
-
-        <!-- Start copyright  -->
-        <div class="footer-copyright">
-            <p class="footer-company"> &copy; Food Guide 2022 </p>
         </div>
-        <!-- End copyright  -->
+    </footer>
+    <!-- End Footer  -->
 
-        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company"> &copy; Food Guide 2022 </p>
+    </div>
+    <!-- End copyright  -->
 
-        <!-- ALL JS FILES -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- ALL PLUGINS -->
-        <script src="js/jquery.superslides.min.js"></script>
-        <script src="js/bootstrap-select.js"></script>
-        <script src="js/inewsticker.js"></script>
-        <script src="js/bootsnav.js."></script>
-        <script src="js/images-loded.min.js"></script>
-        <script src="js/isotope.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/baguetteBox.min.js"></script>
-        <script src="js/form-validator.min.js"></script>
-        <script src="js/contact-form-script.js"></script>
-        <script src="js/custom.js"></script>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
     $tmp = $_FILES['gambarresep']['tmp_name'];//mengambil path folder sementara file yang diupload
     $bahan =$_POST['bahan'];
     $caramembuat =$_POST['caramembuat'];
+    $keterangan =$_POST['keterangan'];
 
     //merename nama foto dengan menmabhkan tanggal dan jam upload
     $fotobaru = date('dmYHis').$gambarresep;
@@ -19,8 +20,8 @@
 
     //proses mengupload data
     if(move_uploaded_file($tmp, $path)){
-        $sql = "INSERT INTO resep(idpenyakit, namaresep, gambarresep, bahan, caramembuat)
-        VALUES('$idpenyakit','$namaresep', '$fotobaru', '$bahan', '$caramembuat')";
+        $sql = "INSERT INTO resep(idpenyakit, namaresep, gambarresep, bahan, caramembuat, keterangan)
+        VALUES('$idpenyakit','$namaresep', '$fotobaru', '$bahan', '$caramembuat', '$keterangan')";
     }else{
         echo '
         <script type="text/JavaScript"> 
@@ -37,7 +38,7 @@
             document.location.href="resepCRUD.php"
         </script>';
 ?>
-    <a href="index.php">Lihat Data</a>
+    <a href="penyakitCRUD.php">Lihat Data</a>
 <?php
     }
     else{
