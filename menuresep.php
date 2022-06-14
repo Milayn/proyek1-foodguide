@@ -114,7 +114,7 @@
                     ?>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <div class="shop-cat-box">
-                            <img class="img-fluid" src="images/resep/<?php echo $row['gambarresep']; ?>" alt="<?php echo $row['namaresep']; ?>" />
+                            <img class="img-fluid" src="admin/images/resep/<?php echo $row['gambarresep']; ?>" alt="<?php echo $row['namaresep']; ?>" />
                             <a class="btn hvr-hover" href="resepPosts.php?idresep=<?php echo $row['idresep']; ?>"><?php echo $row['namaresep']; ?></a>
                         </div>
                     </div>

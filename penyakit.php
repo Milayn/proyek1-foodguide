@@ -57,7 +57,7 @@ include 'admin/koneksi.php';
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="penyakit.html">Penyakit</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="penyakit.php">Penyakit</a></li>
                         <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
                     </ul>
                 </div>
@@ -130,7 +130,7 @@ include 'admin/koneksi.php';
             ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <?php echo '<img src = "images/'.$row['gambarpenyakit'].'">'?>
+                        <?php echo '<img src = "admin/images/penyakit/'.$row['gambarpenyakit'].'">'?>
                         <a class="btn hvr-hover" href="penyakitPosts.php?idpenyakit=<?php echo $row['idpenyakit']; ?>"><?php  echo $row['namapenyakit']?></a>
                     </div>
                 </div>

@@ -53,8 +53,8 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="penyakit.html">Penyakit</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menuresep.html">Resep Makanan</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="penyakit.php">Penyakit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menuresep.php">Resep Makanan</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -118,7 +118,7 @@
                         ?>
                             <h1><?php echo $row1['namapenyakit'] ?></h1>
                             <br>
-                            <img src="images/<?php echo $row1['gambarpenyakit']; ?>" alt="" />
+                            <img src="admin/images/penyakit<?php echo $row1['gambarpenyakit']; ?>" alt="" />
                             <br>
                         <?php
                         }
@@ -171,7 +171,7 @@
                             <div class="col-md-6 col-lg-4 col-xl-4">
                                 <div class="blog-box">
                                     <div class="blog-img">
-                                        <img class="img-fluid" src="images/resep/<?php echo $row4['gambarresep']; ?>" alt="" />
+                                        <img class="img-fluid" src="admin/images/resep/<?php echo $row4['gambarresep']; ?>" alt="" />
                                     </div>
                                     <div class="blog-content">
                                         <div class="title-blog">

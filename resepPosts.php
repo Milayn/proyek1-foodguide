@@ -82,7 +82,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <br><br><br>
-                        <div class="banner-frame"> <img class="img-fluid" src="images/resep/<?php echo $row['gambarresep']; ?>" alt="" />
+                        <div class="banner-frame"> <img class="img-fluid" src="admin/images/resep/<?php echo $row['gambarresep']; ?>" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -123,7 +123,7 @@
                             <div class="col-md-6 col-lg-4 col-xl-4">
                                 <div class="blog-box">
                                     <div class="blog-img">
-                                        <img class="img-fluid" src="images/resep/<?php echo $row['gambarresep']; ?>" alt="" />
+                                        <img class="img-fluid" src="admin/images/resep/<?php echo $row['gambarresep']; ?>" alt="" />
                                     </div>
                                     <div class="blog-content">
                                         <div class="title-blog">
