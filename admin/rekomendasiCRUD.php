@@ -37,7 +37,7 @@
                 </form>
                 <br>
                 <div class="tambah">
-                    <a href="insertRekomForm.php">Tambah Data</a>
+                    <a href="insertRekomForm.htm">Tambah Data</a>
                 </div>
                 <table>
                     <tr>
@@ -53,8 +53,8 @@
                     if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
                         $query="SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan
-                        from menurekomendasi where namarekomendasi like '$cari' OR idrekomendasi like '$cari' 
-                        OR idpenyakit like '$cari' OR keterangan like '$cari'";	
+                        from menurekomendasi where namarekomendasi like '%$cari%' OR idrekomendasi like '$cari' 
+                        OR idpenyakit like '$cari' OR keterangan like '%$cari%'";	
                         if($cari==null)	{
                             $query = "SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan
                         from menurekomendasi";
