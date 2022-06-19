@@ -15,7 +15,7 @@
         <a href="pantanganCRUD.php" class="w3-bar-item w3-button">Pantangan</a>
         <a href="resepCRUD.php" class="w3-bar-item w3-button">Resep</a>
         <div class="logout">
-            <a href="../index.html">Log Out</a>
+            <a href="logout.php">Log Out</a>
         </div>
     </div>
 
