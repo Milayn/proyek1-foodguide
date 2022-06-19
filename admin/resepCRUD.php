@@ -38,7 +38,7 @@
                 </form>
                 <br>
                 <div class="tambah">
-                    <a href="insertForm.html"> Tambah Data</a>
+                    <a href="insertForm.php"> Tambah Data</a>
                 </div>
                 <table>
                     <tr>
@@ -56,7 +56,7 @@
                     if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
                         $query="SELECT r.idresep, r.namaresep, p.namapenyakit, r.gambarresep, 
-                        r.bahan, r.caramembuat from resep r
+                        r.bahan, r.caramembuat, r.keterangan from resep r
                         inner join penyakit p on r.idpenyakit=p.idpenyakit where r.namaresep like '%$cari%' OR r.bahan like '%$cari%' 
                         OR p.namapenyakit like '%$cari%' OR r.caramembuat like '%$cari%'";	
                         if($cari==null)	{
@@ -78,7 +78,7 @@
                                 <td><?php echo $row["namapenyakit"] ?></td>
                                 <td><?php echo $row["idresep"] ?></td>
                                 <td><?php echo $row["namaresep"] ?></td>
-                                <td><?php echo '<img src = "images/' . $row['gambarresep'] . '">' ?></td>
+                                <td><?php echo '<img src = "images/resep/'. $row['gambarresep'] . '">' ?></td>
                                 <td><?php echo nl2br(htmlspecialchars($row["bahan"])) ?></td>
                                 <td><?php echo nl2br(htmlspecialchars($row["caramembuat"])) ?></td>
                                 <td><?php echo nl2br(htmlspecialchars($row["keterangan"])) ?></td>

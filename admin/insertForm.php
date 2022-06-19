@@ -19,12 +19,22 @@
               <div class="col-25">
                 <label for="idpenyakit"><b>ID Penyakit</b></label>
               </div>
+              <?php 
+               include "koneksi.php";
+               $query = "SELECT * from penyakit";
+               $result = mysqli_query($connect, $query);
+              ?>
               <div class="col-75">
                 <select name="idpenyakit" id="idpenyakit">
-                  <option value="1">Anemia</option>
-                  <option value="2">Hipertensi</option>
-                  <option value="3">Hipotensi</option>
-                  <option value="4"></option>
+                  <?php 
+                  if (mysqli_num_rows($result) >= 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                  ?>
+                  <option value="<?php echo $row["idpenyakit"] ?>"><?php echo $row["namapenyakit"] ?></option>
+                  <?php 
+                      }
+                    } 
+                  ?>
                 </select>
               </div>
             </div> 

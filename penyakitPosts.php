@@ -103,7 +103,7 @@
             $query1 = "SELECT idpenyakit, namapenyakit, gambarpenyakit FROM penyakit where idpenyakit=$idpenyakit";
             $query2 = "SELECT idpantangan, idpenyakit, namapantangan, keterangan FROM menupantangan WHERE idpenyakit=$idpenyakit";
             $query3 = "SELECT idrekomendasi, idpenyakit, namarekomendasi, keterangan FROM menurekomendasi where idpenyakit=$idpenyakit";
-            $query4 = "SELECT idresep, idpenyakit, namaresep, bahan, caramembuat, keterangan  FROM resep WHERE idpenyakit=$idpenyakit";
+            $query4 = "SELECT * FROM resep WHERE idpenyakit=$idpenyakit";
             $result1 = mysqli_query($connect, $query1);
             $result2 = mysqli_query($connect, $query2);
             $result3 = mysqli_query($connect, $query3);
@@ -113,23 +113,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all">
-                        <?php
-                        while ($row1 = mysqli_fetch_array($result1)) {;
-                        ?>
-                            <h1><?php echo $row1['namapenyakit'] ?></h1>
-                            <br>
-                            <img src="admin/images/penyakit<?php echo $row1['gambarpenyakit']; ?>" alt="" />
-                            <br>
-                        <?php
-                        }
-                        ?>
-                        <br>
-                        <h2 style="font-weight: 700;">Makanan yang direkomendasikan: </h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="title-all text-center">
+                                    <?php
+                                    while ($row1 = mysqli_fetch_array($result1)) {;
+                                    ?>
+                                        <h1><?php echo $row1['namapenyakit'] ?></h1>
+                                        <br>
+                                        <img width="45%" src="admin/images/penyakit/<?php echo $row1['gambarpenyakit']; ?>" alt="" />
+                                        <br>
+                                    <?php
+                                    }
+                                    ?>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 style="font-weight: 700;">Makanan yang direkomendasikan</h2><br>
                         <?php
                         if (mysqli_num_rows($result3) > 0) {
                             while ($row3 = mysqli_fetch_array($result3)) {
                         ?>
-                                <h2 style="padding-left: 25px;"><?php echo $row3['namarekomendasi'] ?></h2>
+                                <h3 style="padding-left: 25px;"><b><?php echo $row3['namarekomendasi'] ?></b></h3>
                                 <p style="padding-left: 25px;"><?php echo $row3['keterangan'] ?></p>
                                 <br>
                         <?php
@@ -137,12 +143,12 @@
                         }
                         ?>
                         <br>
-                        <h2 style="font-weight: 700;">Makanan yang perlu dihindari: </h2>
+                        <h2 style="font-weight: 700;">Makanan yang perlu dihindari</h2><br>
                         <?php
                         if (mysqli_num_rows($result2) > 0) {
                             while ($row2 = mysqli_fetch_array($result2)) {
                         ?>
-                                <h2 style="padding-left: 25px;"><?php echo $row2['namapantangan'] ?></h2>
+                                <h3 style="padding-left: 25px;"><b><?php echo $row2['namapantangan'] ?></b></h3>
                                 <p style="padding-left: 25px;"><?php echo $row2['keterangan'] ?></p>
                                 <br>
                         <?php
@@ -171,7 +177,7 @@
                             <div class="col-md-6 col-lg-4 col-xl-4">
                                 <div class="blog-box">
                                     <div class="blog-img">
-                                        <img class="img-fluid" src="admin/images/resep/<?php echo $row4['gambarresep']; ?>" alt="" />
+                                        <img class="img-fluid" src="admin/images/resep/<?php echo $row4['gambarresep']; ?>" />
                                     </div>
                                     <div class="blog-content">
                                         <div class="title-blog">

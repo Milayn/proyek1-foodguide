@@ -16,7 +16,7 @@
 
     //memilih path unutk menyimpan foto
     
-    $path= "images/resep".$fotobaru;
+    $path= "images/resep/".$fotobaru;
 
     //proses mengupload data
     if(move_uploaded_file($tmp, $path)){

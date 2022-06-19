@@ -63,8 +63,8 @@
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="penyakit.html">Penyakit</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="menuresep.html">Resep Makanan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="penyakit.php">Penyakit</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="menuresep.php">Resep Makanan</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -88,11 +88,11 @@
                     <div class="col-lg-7">
                         <div class="title-resep">
                             <h2 class="noo-sh-title-top"><span><?php echo $row['namaresep']; ?></span></h2>
-                            <p><?php echo $row['keterangan']; ?></p>
+                            <p><?php echo nl2br(htmlspecialchars($row["keterangan"])) ?></p>
                             <h3><b>Bahan-bahan:</b></h3>
-                            <p><?php echo $row['bahan']; ?></p>
+                            <p><?php echo nl2br(htmlspecialchars($row["bahan"])) ?></p>
                             <h3><b>Cara Membuat</b></h3>
-                            <p><?php echo $row['caramembuat']; ?></p>
+                            <p><?php echo nl2br(htmlspecialchars($row["caramembuat"])) ?></p>
                         </div>
                     </div>
                 </div>
