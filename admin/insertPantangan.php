@@ -16,13 +16,28 @@
           <div class="container2">
             <H2><center>Tambah Menu Pantangan</center></H2> 
             <div class="row">
-                <div class="col-25">
-                  <label for="nama"><b>ID Penyakit</b></label>
-                </div>
-                <div class="col-75">
-                  <input type="number" name="idpenyakit"><br>
-                </div>
+              <div class="col-25">
+                <label for="idpenyakit"><b>ID Penyakit</b></label>
               </div>
+              <?php 
+               include "koneksi.php";
+               $query = "SELECT * from penyakit";
+               $result = mysqli_query($connect, $query);
+              ?>
+              <div class="col-75">
+                <select name="idpenyakit" id="idpenyakit">
+                  <?php 
+                  if (mysqli_num_rows($result) >= 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                  ?>
+                  <option value="<?php echo $row["idpenyakit"] ?>"><?php echo $row["namapenyakit"] ?></option>
+                  <?php 
+                      }
+                    } 
+                  ?>
+                </select>
+              </div>
+            </div> 
             <div class="row">
               <div class="col-25">
                 <label for="nama"><b>Nama Pantangan</b></label>

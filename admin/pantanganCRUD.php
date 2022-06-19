@@ -37,7 +37,7 @@
                 </form>
                 <br>
                 <div class="tambah">
-                    <a href="InsertPantangan.html">Tambah Data</a>
+                    <a href="InsertPantangan.php">Tambah Data</a>
                 </div>
                 <table>
                     <tr>

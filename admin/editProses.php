@@ -7,6 +7,7 @@
     $gambarresep = $_POST['gambarresep'];
     $bahan = $_POST['bahan'];
     $caramembuat = $_POST['caramembuat'];
+    $keterangan = $_POST['keterangan'];
 
     //mengambil data foto yang dipilih dalam form
     $gambarresep = $_FILES['gambarresep']['name'];//mengambil nama file yg diupload
@@ -27,7 +28,7 @@
 
     if(empty($gambarresep)){//jika user tidak memilih file foto pada form
         $query = "UPDATE resep SET namaresep='$namaresep', idpenyakit='$idpenyakit', bahan='$bahan', 
-        caramembuat='$caramembuat'
+        caramembuat='$caramembuat', keterangan='$keterangan'
         WHERE idresep ='$idresep'";
     }else{
         $gambarresepbaru = date('dmYHis').$gambarresep;
@@ -45,7 +46,7 @@
             }
             //Proses ubah data
             $query = "UPDATE resep SET namaresep='$namaresep', idpenyakit='$idpenyakit', gambarresep = '$gambarresepbaru', bahan='$bahan', 
-            caramembuat='$caramembuat'
+            caramembuat='$caramembuat', keterangan='$keterangan'
             WHERE idresep ='$idresep'";
         } 
     }

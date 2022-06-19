@@ -12,7 +12,7 @@
             include "koneksi.php";
             $idresep = $_GET['idresep'];
             $query = "SELECT r.idresep, r.namaresep, p.namapenyakit, r.gambarresep, 
-            r.bahan, r.caramembuat from resep r
+            r.bahan, r.caramembuat, r.keterangan from resep r
             inner join penyakit p on r.idpenyakit=p.idpenyakit where r.idresep='$idresep'";
             $result = mysqli_query($connect, $query);
         ?>
@@ -30,7 +30,7 @@
                 <label for="namapenyakit"><b>Nama Penyakit</b></label>
               </div>
               <div class="col-75">
-                <input type="text" name="namapenyakit" value="<?php echo $row['namapenyakit'];?>"> 
+                <input type="text" name="namapenyakit" value="<?php echo $row['namapenyakit'];?>" readonly> 
               </div>
             </div>
             <div class="row">
@@ -71,6 +71,14 @@
               </div>
               <div class="font col-75">
                 <textarea type="text" name="caramembuat"><?php echo $row["caramembuat"]?></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="keterangan"><b>Keterangan</b></label>
+              </div>
+              <div class="font col-75">
+                <textarea type="text" name="keterangan"><?php echo $row["keterangan"]?></textarea>
               </div>
             </div>
             <div class="row">
